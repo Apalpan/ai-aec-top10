@@ -1,0 +1,69 @@
+<!-- @dsCard group="State of AI · AEC" name="10 · Cierre" -->
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=1280">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--accent:oklch(0.60 0.14 165);--accent-bright:oklch(0.70 0.17 165);
+  --ink:oklch(0.14 0.04 165);--ink-soft:oklch(0.38 0.03 165);--ink-muted:oklch(0.55 0.02 165);
+  --surface:oklch(0.985 0.008 165);--surface-2:oklch(0.955 0.014 165);
+  --border:oklch(0.88 0.015 165)}
+body{width:1280px;height:720px;overflow:hidden;background:var(--surface);
+  font-family:'Space Grotesk',sans-serif;color:var(--ink);position:relative}
+body::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 80% at 50% 60%, oklch(0.70 0.14 165 /.12) 0%, transparent 65%);
+  pointer-events:none}
+.hc{position:absolute;width:20px;height:20px;border-color:var(--accent);border-style:solid;opacity:.3}
+.tl{top:16px;left:16px;border-width:1.5px 0 0 1.5px}
+.tr{top:16px;right:16px;border-width:1.5px 1.5px 0 0}
+.bl{bottom:16px;left:16px;border-width:0 0 1.5px 1.5px}
+.br{bottom:16px;right:16px;border-width:0 1.5px 1.5px 0}
+.closing{height:720px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:28px;padding:52px 120px;text-align:center}
+/* logo */
+.logo{display:flex;align-items:center;gap:10px}
+.logo-mark{width:40px;height:40px;background:linear-gradient(135deg,var(--accent),var(--accent-bright));
+  border-radius:8px;display:grid;place-items:center;color:#fff;font-weight:700;font-size:15px;letter-spacing:.04em}
+.logo-name{font-size:18px;font-weight:600;color:var(--ink);letter-spacing:.05em}
+/* eyebrow */
+.event-tag{font-size:.8rem;font-weight:500;color:var(--ink-muted);letter-spacing:.06em;text-transform:uppercase}
+/* big quote */
+.bigquote{font-size:2.35rem;font-weight:700;line-height:1.2;color:var(--ink);max-width:860px}
+.hl{background:linear-gradient(130deg,var(--accent),var(--accent-bright));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+/* CTA */
+.cta-row{display:flex;gap:14px;align-items:center;margin-top:8px}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:8px;
+  padding:12px 24px;font-size:.9rem;font-weight:600;text-decoration:none;cursor:pointer;border:none}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 4px 20px oklch(0.60 0.14 165 /.35)}
+.btn-ghost{background:var(--surface-2);color:var(--ink-soft);border:1px solid var(--border)}
+/* live dot */
+.live{display:flex;align-items:center;gap:6px;font-size:.78rem;color:var(--ink-muted);margin-top:4px}
+.live-dot{width:8px;height:8px;border-radius:50%;background:var(--accent-bright);animation:pulse 2s infinite}
+.progress{position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--border)}
+.progress span{display:block;width:100%;height:100%;
+  background:linear-gradient(90deg,var(--accent),var(--accent-bright));border-radius:2px}
+</style></head><body>
+<span class="hc tl"></span><span class="hc tr"></span>
+<span class="hc bl"></span><span class="hc br"></span>
+<div class="closing">
+  <div class="logo">
+    <div class="logo-mark">A</div>
+    <span class="logo-name">AECODE</span>
+  </div>
+  <p class="event-tag">AI Construction Summit · Radar AECODE 2026</p>
+  <p class="bigquote">
+    No gana quien abre ChatGPT.
+    <span class="hl">Gana quien convierte la IA en sistema de trabajo verificable.</span>
+  </p>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="#">↓ Descargar informe</a>
+    <a class="btn btn-ghost" href="#">apalpan@genplusdesign.com</a>
+  </div>
+  <div class="live">
+    <span class="live-dot"></span>
+    datos verificados 2026 · 10 slides · resumen ejecutivo
+  </div>
+</div>
+<div class="progress"><span></span></div>
+</body></html>

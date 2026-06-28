@@ -1,0 +1,93 @@
+<!-- @dsCard group="State of AI · AEC" name="06 · Conceptos clave" -->
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=1280">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--accent:oklch(0.60 0.14 165);--accent-bright:oklch(0.70 0.17 165);
+  --ink:oklch(0.14 0.04 165);--ink-soft:oklch(0.38 0.03 165);--ink-muted:oklch(0.55 0.02 165);
+  --surface:oklch(0.985 0.008 165);--surface-2:oklch(0.955 0.014 165);--surface-3:oklch(0.93 0.016 165);
+  --border:oklch(0.88 0.015 165);--kicker:oklch(0.91 0.020 165)}
+body{width:1280px;height:720px;overflow:hidden;background:var(--surface);
+  font-family:'Space Grotesk',sans-serif;color:var(--ink);position:relative}
+.hc{position:absolute;width:20px;height:20px;border-color:var(--accent);border-style:solid;opacity:.3}
+.tl{top:16px;left:16px;border-width:1.5px 0 0 1.5px}
+.tr{top:16px;right:16px;border-width:1.5px 1.5px 0 0}
+.slide{padding:46px 64px 38px;height:720px;display:flex;flex-direction:column;gap:14px}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:8px}
+.eyebrow .idx{background:var(--accent);color:#fff;border-radius:4px;padding:1px 7px;font-size:10px}
+h2{font-size:1.75rem;font-weight:700;line-height:1.2;
+  background:linear-gradient(120deg,var(--ink) 55%,var(--accent) 130%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.kicker-line{height:2px;width:36px;background:var(--accent-bright);border-radius:2px}
+.lead{font-size:.88rem;color:var(--ink-soft);max-width:720px;line-height:1.6}
+/* concept ladder */
+.ladder{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px;flex:1;align-items:stretch}
+.rung{display:flex;flex-direction:column;position:relative}
+/* connector arrow */
+.rung:not(:last-child)::after{
+  content:'→';position:absolute;right:-12px;top:50%;transform:translateY(-50%);
+  font-size:1.4rem;color:var(--accent-bright);z-index:1;opacity:.6}
+.rung-card{background:var(--surface-2);border:1px solid var(--border);border-radius:14px;
+  padding:24px 20px;display:flex;flex-direction:column;gap:10px;flex:1;
+  transition:border-color .2s}
+.rung:nth-child(1) .rung-card{border-top:3px solid oklch(0.65 0.08 165)}
+.rung:nth-child(2) .rung-card{border-top:3px solid oklch(0.60 0.11 165)}
+.rung:nth-child(3) .rung-card{border-top:3px solid oklch(0.55 0.14 165)}
+.rung:nth-child(4) .rung-card{border-top:3px solid var(--accent-bright);
+  box-shadow:0 0 20px oklch(0.70 0.17 165 /.15)}
+.rung-lvl{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-bright);
+  font-variant-numeric:tabular-nums}
+.rung-name{font-size:1.15rem;font-weight:700;color:var(--ink);line-height:1.2}
+.rung-does{font-size:.8rem;color:var(--ink-soft);line-height:1.5;flex:1}
+.rung-risk{font-size:.75rem;color:oklch(0.55 0.14 25);background:oklch(0.97 0.02 25);
+  border-radius:6px;padding:6px 10px;line-height:1.4;margin-top:auto}
+.rung-risk::before{content:'⚠ ';opacity:.7}
+.src-note{font-size:.72rem;color:var(--ink-muted);margin-top:auto}
+.src-note b{color:var(--ink-soft)}
+.progress{position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--border)}
+.progress span{display:block;width:60%;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-bright));border-radius:2px}
+</style></head><body>
+<span class="hc tl"></span><span class="hc tr"></span>
+<div class="slide">
+  <p class="eyebrow"><span class="idx">05</span>Lenguaje mínimo</p>
+  <h2>Chatbot conversa · Asistente ayuda · Agente ejecuta · Workflow deja evidencia</h2>
+  <div class="kicker-line"></div>
+  <p class="lead">Distinguir niveles evita errores: no se gobierna igual un chatbot, un asistente, un agente o un workflow de negocio.</p>
+  <div class="ladder">
+    <div class="rung">
+      <div class="rung-card">
+        <span class="rung-lvl">Nivel 1</span>
+        <div class="rung-name">Chatbot</div>
+        <div class="rung-does">Responde preguntas en conversación. Útil para explorar, preguntar y obtener borradores rápidos.</div>
+        <div class="rung-risk">Inventar o simplificar de más.</div>
+      </div>
+    </div>
+    <div class="rung">
+      <div class="rung-card">
+        <span class="rung-lvl">Nivel 2</span>
+        <div class="rung-name">Asistente / Copiloto</div>
+        <div class="rung-does">Produce, resume, analiza, usa herramientas. Trabaja con documentos, datos e instrucciones estructuradas.</div>
+        <div class="rung-risk">Dependencia sin validación.</div>
+      </div>
+    </div>
+    <div class="rung">
+      <div class="rung-card">
+        <span class="rung-lvl">Nivel 3</span>
+        <div class="rung-name">Agente</div>
+        <div class="rung-does">Planifica y ejecuta pasos con herramientas. Puede buscar, calcular, escribir y actuar sobre sistemas.</div>
+        <div class="rung-risk">Autonomía prematura, costos y permisos.</div>
+      </div>
+    </div>
+    <div class="rung">
+      <div class="rung-card">
+        <span class="rung-lvl">Nivel 4</span>
+        <div class="rung-name">Workflow de IA</div>
+        <div class="rung-does">Proceso completo: input → IA → validación → decisión → registro. Deja trazabilidad y evidencia auditable.</div>
+        <div class="rung-risk">Mal diseño de datos o responsabilidades.</div>
+      </div>
+    </div>
+  </div>
+  <p class="src-note"><b>Fuente:</b> Marco de madurez de uso de IA (Guía de investigación GEN+ / AECODE, 2026).</p>
+</div>
+<div class="progress"><span></span></div>
+</body></html>

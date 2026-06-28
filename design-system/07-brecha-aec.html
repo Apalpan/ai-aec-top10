@@ -1,0 +1,96 @@
+<!-- @dsCard group="State of AI · AEC" name="07 · Brecha AEC" -->
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=1280">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--accent:oklch(0.60 0.14 165);--accent-bright:oklch(0.70 0.17 165);
+  --ink:oklch(0.14 0.04 165);--ink-soft:oklch(0.38 0.03 165);--ink-muted:oklch(0.55 0.02 165);
+  --surface:oklch(0.985 0.008 165);--surface-2:oklch(0.955 0.014 165);--surface-3:oklch(0.93 0.016 165);
+  --border:oklch(0.88 0.015 165);--kicker:oklch(0.91 0.020 165)}
+body{width:1280px;height:720px;overflow:hidden;background:var(--surface);
+  font-family:'Space Grotesk',sans-serif;color:var(--ink);position:relative}
+.hc{position:absolute;width:20px;height:20px;border-color:var(--accent);border-style:solid;opacity:.3}
+.tl{top:16px;left:16px;border-width:1.5px 0 0 1.5px}
+.tr{top:16px;right:16px;border-width:1.5px 1.5px 0 0}
+.slide{padding:46px 64px 38px;height:720px;display:flex;flex-direction:column;gap:14px}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:8px}
+.eyebrow .idx{background:var(--accent);color:#fff;border-radius:4px;padding:1px 7px;font-size:10px}
+h2{font-size:1.75rem;font-weight:700;line-height:1.2;
+  background:linear-gradient(120deg,var(--ink) 55%,var(--accent) 130%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.kicker-line{height:2px;width:36px;background:var(--accent-bright);border-radius:2px}
+.lead{font-size:.88rem;color:var(--ink-soft);max-width:760px;line-height:1.6}
+/* chart + insight layout */
+.body{display:grid;grid-template-columns:1fr 340px;gap:32px;margin-top:6px;flex:1;align-items:start}
+/* bar chart */
+.chart{display:flex;flex-direction:column;gap:20px;padding-top:4px}
+.chart-title{font-size:.78rem;font-weight:600;color:var(--ink-muted);letter-spacing:.04em;text-transform:uppercase}
+.bar-item{display:flex;flex-direction:column;gap:6px}
+.bar-hdr{display:flex;justify-content:space-between;align-items:baseline}
+.bar-hdr span{font-size:.85rem;color:var(--ink-soft)}
+.bar-hdr b{font-size:1.35rem;font-weight:700;font-variant-numeric:tabular-nums}
+.bar-hdr b.green{color:var(--accent)}
+.bar-hdr b.mid{color:oklch(0.48 0.10 200)}
+.bar-hdr b.red{color:oklch(0.52 0.14 25)}
+.track{height:40px;background:var(--surface-3);border-radius:8px;overflow:hidden}
+.fill-green{height:100%;border-radius:8px;background:linear-gradient(90deg,var(--accent),var(--accent-bright));
+  box-shadow:0 0 14px oklch(0.70 0.17 165 /.3)}
+.fill-mid{height:100%;border-radius:8px;background:oklch(0.72 0.07 190)}
+.fill-red{height:100%;border-radius:8px;background:linear-gradient(90deg,oklch(0.55 0.14 25),oklch(0.65 0.12 40))}
+/* insight panel */
+.panel{display:flex;flex-direction:column;gap:14px}
+.insight-card{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;
+  padding:16px 18px;display:flex;flex-direction:column;gap:6px}
+.insight-card h3{font-size:.88rem;font-weight:600;color:var(--ink)}
+.insight-card p{font-size:.8rem;color:var(--ink-soft);line-height:1.5}
+.badge{display:inline-flex;font-size:.72rem;font-weight:600;border-radius:4px;padding:3px 9px;
+  background:var(--kicker);color:var(--accent);margin-top:4px;align-self:flex-start}
+.src-note{font-size:.72rem;color:var(--ink-muted);margin-top:auto}
+.src-note b{color:var(--ink-soft)}
+.progress{position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--border)}
+.progress span{display:block;width:70%;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-bright));border-radius:2px}
+</style></head><body>
+<span class="hc tl"></span><span class="hc tr"></span>
+<div class="slide">
+  <p class="eyebrow"><span class="idx">06</span>Brecha AEC</p>
+  <h2>La paradoja AEC: potencial probado vs. uso real</h2>
+  <div class="kicker-line"></div>
+  <p class="lead">AEC tiene una exposición alta a IA en tareas técnicas, pero uso real desigual. Esa distancia es la oportunidad de formación, consultoría y producto.</p>
+  <div class="body">
+    <div class="chart">
+      <p class="chart-title">% de tareas del sector con exposición y uso real de IA</p>
+      <div class="bar-item">
+        <div class="bar-hdr"><span>Potencial de IA · exposición (Anthropic EI)</span><b class="green">84,8%</b></div>
+        <div class="track"><div class="fill-green" style="width:84.8%"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-hdr"><span>Uso real · oficina técnica (RICS 2025)</span><b class="mid">25%</b></div>
+        <div class="track"><div class="fill-mid" style="width:25%"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-hdr"><span>Uso real · obra física</span><b class="red">1%</b></div>
+        <div class="track"><div class="fill-red" style="width:1%"></div></div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="insight-card">
+        <h3>La brecha de la oficina</h3>
+        <p>Del 84,8% de potencial al 25% de uso real: <strong>60 puntos porcentuales</strong> de oportunidad sin capturar en diseño, ingeniería y costos.</p>
+        <span class="badge">Oportunidad formación</span>
+      </div>
+      <div class="insight-card">
+        <h3>La última milla: la obra</h3>
+        <p>La obra produce el dato más valioso — fotos, avance, calidad, seguridad — y usa IA en menos del 1% de los casos.</p>
+        <span class="badge">Oportunidad producto</span>
+      </div>
+      <div class="insight-card">
+        <h3>AEC vs. otros sectores</h3>
+        <p>Corporativo: 88% ya usa IA en alguna función. AEC oficial: 45% sin IA. La brecha entre sectores también es una oportunidad.</p>
+        <span class="badge">McKinsey 2025 · RICS 2025</span>
+      </div>
+    </div>
+  </div>
+  <p class="src-note"><b>Fuente:</b> Anthropic Economic Index · RICS 2025 · McKinsey State of AI 2025.</p>
+</div>
+<div class="progress"><span></span></div>
+</body></html>

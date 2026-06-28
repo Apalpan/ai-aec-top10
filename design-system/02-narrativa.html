@@ -1,0 +1,71 @@
+<!-- @dsCard group="State of AI · AEC" name="02 · Hilo conductor" -->
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=1280">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--accent:oklch(0.60 0.14 165);--accent-bright:oklch(0.70 0.17 165);
+  --ink:oklch(0.14 0.04 165);--ink-soft:oklch(0.38 0.03 165);--ink-muted:oklch(0.55 0.02 165);
+  --surface:oklch(0.985 0.008 165);--surface-2:oklch(0.955 0.014 165);--surface-3:oklch(0.93 0.016 165);
+  --border:oklch(0.88 0.015 165);--kicker:oklch(0.91 0.020 165)}
+body{width:1280px;height:720px;overflow:hidden;background:var(--surface);
+  font-family:'Space Grotesk',sans-serif;color:var(--ink)}
+.hc{position:absolute;width:20px;height:20px;border-color:var(--accent);border-style:solid;opacity:.3}
+.tl{top:16px;left:16px;border-width:1.5px 0 0 1.5px}
+.tr{top:16px;right:16px;border-width:1.5px 1.5px 0 0}
+.slide{padding:52px 64px 44px;height:720px;display:flex;flex-direction:column;gap:16px}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:8px}
+.eyebrow .idx{font-variant-numeric:tabular-nums;background:var(--accent);color:#fff;border-radius:4px;padding:1px 7px;font-size:10px}
+h2{font-size:1.85rem;font-weight:700;line-height:1.2;
+  background:linear-gradient(120deg,var(--ink) 55%,var(--accent) 130%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.kicker-line{height:2px;width:36px;background:var(--accent-bright);border-radius:2px}
+.lead{font-size:.9rem;color:var(--ink-soft);max-width:780px;line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:4px;flex:1}
+.card{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;
+  padding:20px 18px;display:flex;flex-direction:column;gap:8px;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-bright))}
+.card-k{font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--accent);
+  font-variant-numeric:tabular-nums;text-transform:uppercase}
+.card h3{font-size:1rem;font-weight:700;color:var(--ink);line-height:1.2}
+.card p{font-size:.82rem;color:var(--ink-soft);line-height:1.55;flex:1}
+.card .tag{align-self:flex-start;font-size:.72rem;font-weight:600;
+  background:var(--kicker);color:var(--accent);border-radius:4px;padding:3px 10px;margin-top:6px}
+.progress{position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--border)}
+.progress span{display:block;width:20%;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-bright));border-radius:2px}
+</style></head><body>
+<span class="hc tl"></span><span class="hc tr"></span>
+<div class="slide">
+  <p class="eyebrow"><span class="idx">01</span>Hilo conductor</p>
+  <h2>Una historia clara: de asombro a criterio operativo</h2>
+  <div class="kicker-line"></div>
+  <p class="lead">Esta presentación no es un desfile de herramientas. Es una forma de entender la IA como infraestructura de trabajo y como nueva habilidad profesional.</p>
+  <div class="grid">
+    <div class="card">
+      <span class="card-k">01</span>
+      <h3>Qué cambió</h3>
+      <p>La IA pasó de responder texto a razonar, ver, crear, programar y usar herramientas.</p>
+      <span class="tag">Capacidad</span>
+    </div>
+    <div class="card">
+      <span class="card-k">02</span>
+      <h3>Por qué importa</h3>
+      <p>La adopción masiva ya empezó, pero la captura de valor sigue en pilotos.</p>
+      <span class="tag">Productividad</span>
+    </div>
+    <div class="card">
+      <span class="card-k">03</span>
+      <h3>Dónde está AEC</h3>
+      <p>El sector tiene gran mercado, baja productividad y datos desaprovechados.</p>
+      <span class="tag">Brecha</span>
+    </div>
+    <div class="card">
+      <span class="card-k">04</span>
+      <h3>Qué hacer</h3>
+      <p>Pasar de prompts sueltos a workflows con validación, trazabilidad y evidencia.</p>
+      <span class="tag">Sistema</span>
+    </div>
+  </div>
+</div>
+<div class="progress"><span></span></div>
+</body></html>

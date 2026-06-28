@@ -4,20 +4,22 @@
    Todo decorativo (aria-hidden), GPU-only, con ruta reduced-motion.
    ========================================================================= */
 
-/* ------------------------ grid de planos (fondo) ----------------------- */
+/* ------------------------ grid de planos (fondo) premium ----------------------- */
 .deck::after {
   content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
   background:
     linear-gradient(var(--hud-grid) 1px, transparent 1px),
     linear-gradient(90deg, var(--hud-grid) 1px, transparent 1px);
-  background-size: 56px 56px;
-  mask-image: radial-gradient(120% 90% at 50% 40%, black 30%, transparent 78%);
-  -webkit-mask-image: radial-gradient(120% 90% at 50% 40%, black 30%, transparent 78%);
+  background-size: 52px 52px;
+  mask-image: radial-gradient(ellipse 90% 88% at 50% 42%, black 24%, transparent 76%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 88% at 50% 42%, black 24%, transparent 76%);
+  opacity: 0.65;
 }
 
-/* ------------------- brackets de esquina (marco HUD) ------------------- */
-.hud-c { position: absolute; z-index: 15; width: 20px; height: 20px; pointer-events: none;
-  border: 2px solid var(--hud-line); }
+/* ------------------- brackets de esquina (marco HUD) premium ------------------- */
+.hud-c { position: absolute; z-index: 15; width: 24px; height: 24px; pointer-events: none;
+  border: 2px solid var(--hud-line);
+  filter: drop-shadow(0 0 4px color-mix(in oklch, var(--neon) 50%, transparent)); }
 .hud-c.tl { top: 70px; left: 14px; border-right: 0; border-bottom: 0; border-radius: 4px 0 0 0; }
 .hud-c.tr { top: 70px; right: 14px; border-left: 0; border-bottom: 0; border-radius: 0 4px 0 0; }
 .hud-c.bl { bottom: 70px; left: 14px; border-right: 0; border-top: 0; border-radius: 0 0 0 4px; }
@@ -25,26 +27,31 @@
 
 @media (max-width: 960px) { .hud-c { display: none; } }
 
-/* ------------------ barrido de escaneo al activar slide ---------------- */
+/* ------------------ barrido de escaneo al activar slide — premium ---------------- */
 .slide[data-state='current'] .slide-inner::before {
-  content: ''; position: absolute; left: 6%; right: 6%; top: 0; height: 2px; z-index: 6; pointer-events: none;
-  background: linear-gradient(90deg, transparent, var(--accent-bright), transparent);
-  opacity: 0; animation: hudsweep 0.85s var(--ease-out) 0.1s;
+  content: ''; position: absolute; left: 4%; right: 4%; top: 0; height: 1px; z-index: 6; pointer-events: none;
+  background: linear-gradient(90deg, transparent 0%, var(--accent) 30%, var(--neon) 50%, var(--accent) 70%, transparent 100%);
+  box-shadow: 0 0 18px 2px var(--neon);
+  opacity: 0; animation: hudsweep 0.9s var(--ease-out) 0.08s;
 }
 @keyframes hudsweep {
-  0% { opacity: 0; transform: translateY(4vh); }
-  18% { opacity: 0.75; }
-  100% { opacity: 0; transform: translateY(78vh); }
+  0% { opacity: 0; transform: translateY(2vh); }
+  12% { opacity: 0.9; }
+  100% { opacity: 0; transform: translateY(82vh); }
 }
 
-/* ---------------- degradé verde sutil en títulos de sección ------------ */
-.s-title { background: linear-gradient(118deg, var(--ink) 62%, var(--accent) 135%);
+/* ---------------- degradé verde en títulos de sección — premium ------------ */
+.s-title { background: linear-gradient(112deg, var(--ink) 50%, var(--accent) 110%, var(--neon) 140%);
   -webkit-background-clip: text; background-clip: text; color: transparent; }
 
-/* --------------------------- eyebrow técnico --------------------------- */
+/* --------------------------- eyebrow técnico — premium --------------------------- */
 .eyebrow { font-family: var(--font-mono); letter-spacing: 0.16em; }
-.eyebrow::before { content: '//'; color: var(--accent); font-weight: 700; opacity: 0.85; margin-right: 2px; }
-.kicker-line { background: linear-gradient(90deg, var(--accent), var(--accent-bright)); box-shadow: 0 0 12px -2px var(--accent-bright); }
+.eyebrow::before { content: '//'; color: var(--accent); font-weight: 700; opacity: 0.9; margin-right: 3px; }
+.kicker-line {
+  height: 3px; border-radius: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--neon), var(--accent));
+  box-shadow: 0 0 14px 1px var(--neon), 0 0 28px 2px color-mix(in oklch, var(--neon) 40%, transparent);
+}
 
 /* --------------------- figuras: marco de datos HUD --------------------- */
 .figure { position: relative; }
@@ -68,15 +75,20 @@
 .cpart dt { font-family: var(--font-mono); letter-spacing: 0.1em; }
 .cap-badge { font-family: var(--font-mono); }
 
-/* ------------------------- barra superior / nav ------------------------ */
-.deck-progress span { box-shadow: 0 0 14px -2px var(--accent-bright); background: linear-gradient(90deg, var(--accent), var(--accent-bright)); }
+/* ------------------------- barra superior / nav — premium ------------------------ */
+.deck-progress span {
+  box-shadow: 0 0 16px 0px var(--neon), 0 0 32px 4px color-mix(in oklch, var(--neon) 42%, transparent);
+  background: linear-gradient(90deg, var(--accent), var(--neon), var(--accent));
+}
 .nav-count { font-variant-numeric: tabular-nums; }
-.nc-cur { text-shadow: 0 0 14px color-mix(in oklch, var(--accent-bright) 60%, transparent); }
+.nc-cur { text-shadow: 0 0 16px color-mix(in oklch, var(--neon) 65%, transparent); }
 
-/* ----------------------- telemetría de la portada ---------------------- */
+/* ----------------------- telemetría de la portada — premium ---------------------- */
 .cover-hud { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; margin-top: 10px;
-  padding: 12px 16px; border: 1px dashed var(--border-strong); border-radius: var(--radius);
-  background: color-mix(in oklch, var(--accent) 5%, var(--surface));
+  padding: 12px 18px; border: 1px solid var(--glass-border); border-radius: var(--radius);
+  background: linear-gradient(120deg, color-mix(in oklch, var(--accent) 7%, var(--surface)), color-mix(in oklch, var(--accent) 3%, var(--surface)));
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 20px -12px color-mix(in oklch, var(--accent) 30%, transparent), inset 0 1px 0 color-mix(in oklch, white 60%, transparent);
   font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.05em; color: var(--muted); }
 .cover-hud .ch-item b { color: var(--accent); font-weight: 700; margin-right: 5px; }
 .cover-hud .ch-sep { width: 1px; height: 14px; background: var(--border-strong); }

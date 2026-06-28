@@ -1,0 +1,89 @@
+<!-- @dsCard group="State of AI · AEC" name="01 · Portada" -->
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@keyframes pulse { 0%,100%{opacity:.6} 50%{opacity:1} }
+@keyframes gradMove { 0%{background-position:0% 50%} 100%{background-position:100% 50%} }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --accent:oklch(0.60 0.14 165);--accent-bright:oklch(0.70 0.17 165);
+  --ink:oklch(0.14 0.04 165);--ink-soft:oklch(0.38 0.03 165);--ink-muted:oklch(0.55 0.02 165);
+  --surface:oklch(0.985 0.008 165);--surface-2:oklch(0.955 0.014 165);
+  --border:oklch(0.88 0.015 165);
+}
+body{width:1280px;height:720px;overflow:hidden;background:var(--surface);
+  font-family:'Space Grotesk',sans-serif;color:var(--ink);position:relative}
+/* ambient bg radial */
+body::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 70% at 75% 50%, oklch(0.70 0.14 165 /.10) 0%, transparent 70%);
+  pointer-events:none}
+/* HUD brackets */
+.hc{position:absolute;width:20px;height:20px;border-color:var(--accent);border-style:solid;opacity:.3}
+.tl{top:16px;left:16px;border-width:1.5px 0 0 1.5px}
+.tr{top:16px;right:16px;border-width:1.5px 1.5px 0 0}
+.bl{bottom:16px;left:16px;border-width:0 0 1.5px 1.5px}
+.br{bottom:16px;right:16px;border-width:0 1.5px 1.5px 0}
+.cover{padding:52px 68px 44px;height:720px;display:flex;flex-direction:column;gap:18px}
+/* logo */
+.logo{display:flex;align-items:center;gap:10px}
+.logo-mark{width:32px;height:32px;background:var(--accent);border-radius:6px;
+  display:grid;place-items:center;color:#fff;font-weight:700;font-size:13px;letter-spacing:.05em}
+.logo-name{font-size:14px;font-weight:600;color:var(--ink);letter-spacing:.04em}
+/* eyebrow */
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--accent)}
+/* title */
+h1{font-size:3.2rem;font-weight:700;line-height:1.12;max-width:760px;color:var(--ink)}
+h1 .grad{
+  background:linear-gradient(130deg,var(--accent-bright),oklch(0.50 0.12 165));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+/* lead */
+.lead{font-size:.98rem;color:var(--ink-soft);max-width:640px;line-height:1.65}
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.chip{font-size:.75rem;font-weight:500;color:var(--accent);
+  background:oklch(0.60 0.14 165 /.10);border:1px solid oklch(0.60 0.14 165 /.28);
+  border-radius:999px;padding:4px 12px;letter-spacing:.02em}
+/* HUD bar */
+.hud{display:flex;align-items:center;gap:0;margin-top:auto;
+  background:var(--surface-2);border:1px solid var(--border);border-radius:8px;
+  padding:10px 18px;gap:20px;overflow:hidden}
+.ch-item{font-size:.75rem;color:var(--ink-muted);white-space:nowrap}
+.ch-item b{font-weight:700;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+.ch-sep{width:1px;height:18px;background:var(--border);flex-shrink:0}
+.ch-dot{display:inline-block;width:6px;height:6px;border-radius:50%;
+  background:var(--accent-bright);animation:pulse 2s infinite;margin-right:5px;vertical-align:middle}
+/* progress */
+.progress{position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--border)}
+.progress span{display:block;width:10%;height:100%;
+  background:linear-gradient(90deg,var(--accent),var(--accent-bright));border-radius:2px}
+</style></head><body>
+<span class="hc tl"></span><span class="hc tr"></span>
+<span class="hc bl"></span><span class="hc br"></span>
+<div class="cover">
+  <div class="logo">
+    <div class="logo-mark">A</div>
+    <span class="logo-name">AECODE</span>
+  </div>
+  <p class="eyebrow">AI Construction Summit · Radar AECODE 2026</p>
+  <h1>Estado actual de la <span class="grad">Inteligencia Artificial</span><br>y oportunidad en AEC</h1>
+  <p class="lead">Las 10 diapositivas esenciales: qué cambió en la IA, qué significan los datos actuales y cómo convertir ese conocimiento en habilidad y acción en arquitectura, ingeniería y construcción.</p>
+  <div class="chips">
+    <span class="chip">Datos verificados 2026</span>
+    <span class="chip">AI Construction Summit</span>
+    <span class="chip">Radar AECODE</span>
+    <span class="chip">10 slides · resumen ejecutivo</span>
+  </div>
+  <div class="hud">
+    <span class="ch-item"><b>2×</b> cómputo cada 6 meses</span>
+    <span class="ch-sep"></span>
+    <span class="ch-item"><b>1000 M</b> usuarios de ChatGPT</span>
+    <span class="ch-sep"></span>
+    <span class="ch-item"><b>84,8%</b> exposición en Arq./Ing.</span>
+    <span class="ch-sep"></span>
+    <span class="ch-item"><span class="ch-dot"></span>datos verificados 2026</span>
+  </div>
+</div>
+<div class="progress"><span></span></div>
+</body></html>

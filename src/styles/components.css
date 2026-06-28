@@ -20,11 +20,14 @@
 .sidebar-kicker { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
 .toc { position: relative; margin-top: 26px; padding-left: 14px; flex: 1; }
 .toc-track { position: absolute; left: 0; top: 6px; bottom: 6px; width: 2px; background: var(--border); border-radius: 2px; overflow: hidden; }
-.toc-fill { display: block; width: 100%; background: linear-gradient(var(--blue), var(--accent)); transition: height 90ms linear; }
+.toc-fill { display: block; width: 100%; background: linear-gradient(var(--accent), var(--neon));
+  box-shadow: 0 0 8px 1px color-mix(in oklch, var(--neon) 45%, transparent);
+  transition: height 90ms linear; }
 .toc ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1px; }
 .toc-link { display: flex; align-items: baseline; gap: 9px; padding: 6px 10px; border-radius: 8px; color: var(--muted); font-size: 0.86rem; transition: color var(--dur-1) var(--ease-out), background var(--dur-1); }
 .toc-link:hover { color: var(--ink); background: color-mix(in oklch, var(--surface) 60%, transparent); }
-.toc-link.active { color: var(--ink); background: color-mix(in oklch, var(--blue) 12%, transparent); }
+.toc-link.active { color: var(--ink); background: color-mix(in oklch, var(--accent) 10%, transparent);
+  box-shadow: inset 3px 0 0 var(--accent); }
 .toc-num { font-variant-numeric: tabular-nums; font-size: 0.68rem; color: var(--faint); min-width: 18px; }
 .toc-link.active .toc-num { color: var(--accent); }
 .toc-label { line-height: 1.25; }
@@ -62,9 +65,18 @@
 [data-accent="amber"], .anchor.amber { --ac: var(--d-amber); }
 [data-accent="pink"], .anchor.pink { --ac: var(--d-pink); }
 
-/* ===================== STAT CARD ===================== */
-.stat { position: relative; padding: 18px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--surface); overflow: hidden; }
-.stat-bar { position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--ac, var(--d-blue)); }
+/* ===================== STAT CARD — premium ===================== */
+.stat { position: relative; padding: 18px; border-radius: var(--radius);
+  border: 1px solid var(--border); border-top: 1px solid var(--glass-border);
+  background: linear-gradient(160deg, color-mix(in oklch, white 94%, var(--accent) 6%), var(--surface));
+  backdrop-filter: blur(6px) saturate(1.1);
+  box-shadow: 0 2px 0 0 color-mix(in oklch, var(--accent) 8%, transparent) inset, 0 8px 24px -16px color-mix(in oklch, var(--blue) 40%, transparent);
+  overflow: hidden;
+  transition: transform var(--dur-2) var(--ease-out), border-color var(--dur-2), box-shadow var(--dur-2); }
+.stat:hover { transform: translateY(-4px); border-color: color-mix(in oklch, var(--accent) 38%, var(--border));
+  box-shadow: 0 2px 0 0 color-mix(in oklch, var(--accent) 14%, transparent) inset, 0 20px 48px -20px color-mix(in oklch, var(--accent) 50%, transparent); }
+.stat-bar { position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--ac, var(--d-blue));
+  box-shadow: 2px 0 8px 0 color-mix(in oklch, var(--ac, var(--d-blue)) 40%, transparent); }
 .stat-val { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.5rem, 1.2rem + 1.3vw, 2.1rem); color: var(--ink); line-height: 1; }
 .stat-label { color: var(--ink-soft); font-size: var(--step--1); margin-top: 9px; line-height: 1.4; }
 .stat-src { color: var(--muted); font-size: 0.68rem; margin-top: 9px; }

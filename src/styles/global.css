@@ -21,13 +21,14 @@ body {
   overflow-x: hidden;
   transition: background var(--dur-3) var(--ease-out), color var(--dur-3) var(--ease-out);
 }
-/* Malla de glows de fondo */
+/* Malla de glows de fondo — premium */
 body::before {
   content: '';
   position: fixed; inset: 0; z-index: -1; pointer-events: none;
   background:
-    radial-gradient(60vw 50vh at 82% -6%, var(--glow-a), transparent 60%),
-    radial-gradient(55vw 50vh at 4% 104%, var(--glow-b), transparent 60%);
+    radial-gradient(62vw 55vh at 84% -8%, var(--glow-a), transparent 58%),
+    radial-gradient(50vw 55vh at 2% 106%, var(--glow-b), transparent 58%),
+    radial-gradient(38vw 36vh at 50% 108%, color-mix(in oklch, var(--neon) 0.08, transparent), transparent 65%);
 }
 
 h1, h2, h3, h4 { font-family: var(--font-display); color: var(--ink); line-height: 1.08; letter-spacing: -0.02em; font-weight: 600; text-wrap: balance; }
@@ -74,7 +75,7 @@ b, strong { color: var(--ink); font-weight: 600; }
 .eyebrow .idx { color: var(--accent); }
 .section h2 { font-size: var(--step-3); margin-top: 14px; }
 .section .lead { color: var(--ink-soft); font-size: var(--step-1); margin-top: 14px; max-width: 62ch; }
-.kicker-line { width: 44px; height: 3px; border-radius: 3px; background: linear-gradient(90deg, var(--blue), var(--accent)); margin-top: 8px; }
+.kicker-line { width: 48px; height: 3px; border-radius: 3px; background: linear-gradient(90deg, var(--accent), var(--neon)); margin-top: 8px; }
 
 /* Cards / panels */
 .panel { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow); backdrop-filter: blur(8px); }
@@ -90,8 +91,10 @@ b, strong { color: var(--ink); font-weight: 600; }
 .btn { display: inline-flex; align-items: center; gap: 9px; padding: 11px 18px; border-radius: 999px; font-weight: 600; font-size: var(--step-0); border: 1px solid var(--border-strong); color: var(--ink); background: var(--surface); cursor: pointer; transition: transform var(--dur-1) var(--ease-out), background var(--dur-2) var(--ease-out), border-color var(--dur-2) var(--ease-out); }
 .btn:hover { background: var(--surface-2); border-color: var(--blue); }
 .btn:active { transform: scale(0.97); }
-.btn-cta { background: var(--accent); color: var(--accent-ink); border-color: transparent; box-shadow: 0 10px 30px -12px color-mix(in oklch, var(--accent) 70%, transparent); }
-.btn-cta:hover { background: color-mix(in oklch, var(--accent) 88%, white); border-color: transparent; color: var(--accent-ink); }
+.btn-cta { background: linear-gradient(135deg, var(--accent), var(--neon) 120%); color: var(--accent-ink);
+  border-color: transparent; box-shadow: 0 8px 28px -12px color-mix(in oklch, var(--accent) 70%, transparent), 0 0 0 1px color-mix(in oklch, var(--neon) 25%, transparent); }
+.btn-cta:hover { background: linear-gradient(135deg, color-mix(in oklch, var(--accent) 88%, white), color-mix(in oklch, var(--neon) 88%, white) 120%); border-color: transparent; color: var(--accent-ink);
+  box-shadow: 0 12px 36px -12px color-mix(in oklch, var(--accent) 75%, transparent); }
 
 /* Grids */
 .grid { display: grid; gap: 14px; }

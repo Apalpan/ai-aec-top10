@@ -1,0 +1,102 @@
+<!-- @dsCard group="State of AI · AEC" name="05 · Benchmarks" -->
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=1280">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--accent:oklch(0.60 0.14 165);--accent-bright:oklch(0.70 0.17 165);
+  --ink:oklch(0.14 0.04 165);--ink-soft:oklch(0.38 0.03 165);--ink-muted:oklch(0.55 0.02 165);
+  --surface:oklch(0.985 0.008 165);--surface-2:oklch(0.955 0.014 165);--surface-3:oklch(0.93 0.016 165);
+  --border:oklch(0.88 0.015 165);--kicker:oklch(0.91 0.020 165);
+  --indigo:oklch(0.52 0.14 265);--indigo-bg:oklch(0.95 0.03 265)}
+body{width:1280px;height:720px;overflow:hidden;background:var(--surface);
+  font-family:'Space Grotesk',sans-serif;color:var(--ink);position:relative}
+.hc{position:absolute;width:20px;height:20px;border-color:var(--accent);border-style:solid;opacity:.3}
+.tl{top:16px;left:16px;border-width:1.5px 0 0 1.5px}
+.tr{top:16px;right:16px;border-width:1.5px 1.5px 0 0}
+.slide{padding:46px 64px 38px;height:720px;display:flex;flex-direction:column;gap:14px}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:8px}
+.eyebrow .idx{background:var(--accent);color:#fff;border-radius:4px;padding:1px 7px;font-size:10px}
+h2{font-size:1.75rem;font-weight:700;line-height:1.2;
+  background:linear-gradient(120deg,var(--ink) 55%,var(--accent) 130%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.kicker-line{height:2px;width:36px;background:var(--accent-bright);border-radius:2px}
+.lead{font-size:.88rem;color:var(--ink-soft);max-width:760px;line-height:1.6}
+/* grouped bar chart */
+.chart-wrap{flex:1;display:flex;flex-direction:column;gap:8px;margin-top:4px}
+.legend{display:flex;gap:20px;align-items:center}
+.legend-item{display:flex;align-items:center;gap:7px;font-size:.8rem;color:var(--ink-soft)}
+.dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}
+.dot-23{background:var(--indigo)}
+.dot-24{background:var(--accent)}
+.chart-body{flex:1;display:flex;flex-direction:column;gap:22px;justify-content:center}
+.bench-row{display:flex;flex-direction:column;gap:8px}
+.bench-title{font-size:.82rem;font-weight:600;color:var(--ink-soft)}
+.bars-pair{display:flex;flex-direction:column;gap:6px}
+.bar-row{display:flex;align-items:center;gap:10px}
+.bar-year{font-size:.72rem;font-family:'Inter',monospace;color:var(--ink-muted);width:36px;flex-shrink:0}
+.bar-track{flex:1;height:28px;background:var(--surface-3);border-radius:6px;overflow:hidden;position:relative}
+.fill-23{height:100%;border-radius:6px;background:var(--indigo);opacity:.7}
+.fill-24{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--accent),var(--accent-bright));
+  box-shadow:0 0 10px oklch(0.70 0.17 165 /.3)}
+.bar-pct{font-size:.82rem;font-weight:600;width:48px;flex-shrink:0;font-variant-numeric:tabular-nums}
+.bar-pct.y24{color:var(--accent)}
+.bar-pct.y23{color:var(--indigo);opacity:.8}
+/* human reference line */
+.human-ref{position:relative;height:28px;margin-top:4px}
+.human-line{position:absolute;top:50%;height:2px;background:repeating-linear-gradient(90deg,var(--ink-muted) 0,var(--ink-muted) 4px,transparent 4px,transparent 8px);
+  left:46px;right:0;transform:translateY(-50%)}
+.human-lbl{position:absolute;right:0;top:50%;transform:translateY(-50%);
+  font-size:.72rem;color:var(--ink-muted);background:var(--surface);padding:0 4px}
+/* jump badge */
+.jump{display:inline-flex;align-items:center;gap:4px;background:oklch(0.60 0.14 165 /.1);
+  border:1px solid oklch(0.60 0.14 165 /.25);border-radius:4px;padding:2px 8px;
+  font-size:.75rem;font-weight:700;color:var(--accent);margin-left:8px}
+.src-note{font-size:.72rem;color:var(--ink-muted);margin-top:auto}
+.src-note b{color:var(--ink-soft)}
+.progress{position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--border)}
+.progress span{display:block;width:50%;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-bright));border-radius:2px}
+</style></head><body>
+<span class="hc tl"></span><span class="hc tr"></span>
+<div class="slide">
+  <p class="eyebrow"><span class="idx">04</span>Capacidad medida</p>
+  <h2>La IA alcanza al humano: salto en un solo año</h2>
+  <div class="kicker-line"></div>
+  <p class="lead">Un benchmark es un examen estándar. El mensaje: la frontera sube rápido. En un año la IA pasó de estudiante a rival del experto.</p>
+  <div class="chart-wrap">
+    <div class="legend">
+      <div class="legend-item"><div class="dot dot-23"></div>2023</div>
+      <div class="legend-item"><div class="dot dot-24"></div>2024</div>
+      <div style="margin-left:auto;font-size:.78rem;color:var(--ink-muted)">% resuelto · referencia humana experta: 90%</div>
+    </div>
+    <div class="chart-body">
+      <div class="bench-row">
+        <div class="bench-title">SWE-bench <span style="font-weight:400;color:var(--ink-muted)">(código software)</span><span class="jump">+67,3 pp</span></div>
+        <div class="bars-pair">
+          <div class="bar-row"><span class="bar-year">2023</span><div class="bar-track"><div class="fill-23" style="width:4.4%"></div></div><span class="bar-pct y23">4,4%</span></div>
+          <div class="bar-row"><span class="bar-year">2024</span><div class="bar-track"><div class="fill-24" style="width:71.7%"></div></div><span class="bar-pct y24">71,7%</span></div>
+        </div>
+      </div>
+      <div class="bench-row">
+        <div class="bench-title">GPQA <span style="font-weight:400;color:var(--ink-muted)">(ciencia PhD)</span><span class="jump">+49 pp</span></div>
+        <div class="bars-pair">
+          <div class="bar-row"><span class="bar-year">2023</span><div class="bar-track"><div class="fill-23" style="width:34%"></div></div><span class="bar-pct y23">34%</span></div>
+          <div class="bar-row"><span class="bar-year">2024</span><div class="bar-track"><div class="fill-24" style="width:83%"></div></div><span class="bar-pct y24">83%</span></div>
+        </div>
+      </div>
+      <div class="bench-row">
+        <div class="bench-title">MMMU <span style="font-weight:400;color:var(--ink-muted)">(multimodal)</span><span class="jump">+19 pp</span></div>
+        <div class="bars-pair">
+          <div class="bar-row"><span class="bar-year">2023</span><div class="bar-track"><div class="fill-23" style="width:59%"></div></div><span class="bar-pct y23">59%</span></div>
+          <div class="bar-row"><span class="bar-year">2024</span><div class="bar-track"><div class="fill-24" style="width:78%"></div></div><span class="bar-pct y24">78%</span></div>
+        </div>
+      </div>
+      <div class="human-ref">
+        <div class="human-line"></div>
+        <span class="human-lbl">Humano experto ~90%</span>
+      </div>
+    </div>
+  </div>
+  <p class="src-note"><b>Fuente:</b> Stanford HAI, AI Index 2025. Saltos verificados.</p>
+</div>
+<div class="progress"><span></span></div>
+</body></html>

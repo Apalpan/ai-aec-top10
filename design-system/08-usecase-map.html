@@ -1,0 +1,87 @@
+<!-- @dsCard group="State of AI · AEC" name="08 · Mapa de casos de uso AEC" -->
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=1280">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--accent:oklch(0.60 0.14 165);--accent-bright:oklch(0.70 0.17 165);
+  --ink:oklch(0.14 0.04 165);--ink-soft:oklch(0.38 0.03 165);--ink-muted:oklch(0.55 0.02 165);
+  --surface:oklch(0.985 0.008 165);--surface-2:oklch(0.955 0.014 165);--surface-3:oklch(0.93 0.016 165);
+  --border:oklch(0.88 0.015 165);--kicker:oklch(0.91 0.020 165)}
+body{width:1280px;height:720px;overflow:hidden;background:var(--surface);
+  font-family:'Space Grotesk',sans-serif;color:var(--ink);position:relative}
+.hc{position:absolute;width:20px;height:20px;border-color:var(--accent);border-style:solid;opacity:.3}
+.tl{top:16px;left:16px;border-width:1.5px 0 0 1.5px}
+.tr{top:16px;right:16px;border-width:1.5px 1.5px 0 0}
+.slide{padding:46px 64px 38px;height:720px;display:flex;flex-direction:column;gap:14px}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:8px}
+.eyebrow .idx{background:var(--accent);color:#fff;border-radius:4px;padding:1px 7px;font-size:10px}
+h2{font-size:1.75rem;font-weight:700;line-height:1.2;
+  background:linear-gradient(120deg,var(--ink) 55%,var(--accent) 130%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.kicker-line{height:2px;width:36px;background:var(--accent-bright);border-radius:2px}
+.lead{font-size:.88rem;color:var(--ink-soft);max-width:840px;line-height:1.6}
+/* 6-card grid */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);
+  gap:14px;flex:1;margin-top:4px}
+.card{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;
+  padding:18px 20px;display:flex;flex-direction:column;gap:8px;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-bright));opacity:.6}
+.card-n{font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--accent-bright);
+  font-variant-numeric:tabular-nums;text-transform:uppercase}
+.card h3{font-size:1.05rem;font-weight:700;color:var(--ink);line-height:1.2}
+.card p{font-size:.8rem;color:var(--ink-soft);line-height:1.5}
+/* tag chips inside card */
+.tag-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto}
+.tag{font-size:.68rem;font-weight:500;color:var(--accent);background:var(--kicker);
+  border-radius:4px;padding:2px 7px}
+.progress{position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--border)}
+.progress span{display:block;width:80%;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-bright));border-radius:2px}
+</style></head><body>
+<span class="hc tl"></span><span class="hc tr"></span>
+<div class="slide">
+  <p class="eyebrow"><span class="idx">07</span>Mapa de aplicación</p>
+  <h2>Dónde entra la IA en el ciclo AEC</h2>
+  <div class="kicker-line"></div>
+  <p class="lead">La IA no es una sola herramienta. Es una capa que puede asistir tareas repetitivas, comparativas, documentales, creativas y analíticas en cada fase del proyecto.</p>
+  <div class="grid">
+    <div class="card">
+      <span class="card-n">01</span>
+      <h3>Diseño</h3>
+      <p>conceptos, referencias, criterios, narrativa, opciones de partido, memorias descriptivas</p>
+      <div class="tag-row"><span class="tag">ideación</span><span class="tag">síntesis</span><span class="tag">normativa</span></div>
+    </div>
+    <div class="card">
+      <span class="card-n">02</span>
+      <h3>Ingeniería</h3>
+      <p>revisión técnica, cálculos auxiliares, consulta de normas, reportes de ingeniería, RFIs</p>
+      <div class="tag-row"><span class="tag">normas</span><span class="tag">cálculo</span><span class="tag">BIM</span></div>
+    </div>
+    <div class="card">
+      <span class="card-n">03</span>
+      <h3>Costos</h3>
+      <p>metrados, comparativos de proveedores, supuestos, sensibilidad y narrativa ejecutiva</p>
+      <div class="tag-row"><span class="tag">presupuesto</span><span class="tag">análisis</span><span class="tag">escenarios</span></div>
+    </div>
+    <div class="card">
+      <span class="card-n">04</span>
+      <h3>Planificación</h3>
+      <p>riesgos, secuencias, restricciones, lookahead, minutas de obra y control de cronograma</p>
+      <div class="tag-row"><span class="tag">riesgos</span><span class="tag">lookahead</span><span class="tag">minutas</span></div>
+    </div>
+    <div class="card">
+      <span class="card-n">05</span>
+      <h3>Obra</h3>
+      <p>fotos de avance, seguridad, calidad, incidencias, clasificación visual y alertas tempranas</p>
+      <div class="tag-row"><span class="tag">visual AI</span><span class="tag">seguridad</span><span class="tag">calidad</span></div>
+    </div>
+    <div class="card">
+      <span class="card-n">06</span>
+      <h3>Comercial</h3>
+      <p>propuestas, presentaciones, memoria de oportunidades, cotizaciones y análisis de competencia</p>
+      <div class="tag-row"><span class="tag">propuestas</span><span class="tag">BD</span><span class="tag">licitación</span></div>
+    </div>
+  </div>
+</div>
+<div class="progress"><span></span></div>
+</body></html>

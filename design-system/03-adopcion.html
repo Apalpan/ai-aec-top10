@@ -1,0 +1,105 @@
+<!-- @dsCard group="State of AI · AEC" name="03 · Velocidad de adopción" -->
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=1280">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--accent:oklch(0.60 0.14 165);--accent-bright:oklch(0.70 0.17 165);
+  --ink:oklch(0.14 0.04 165);--ink-soft:oklch(0.38 0.03 165);--ink-muted:oklch(0.55 0.02 165);
+  --surface:oklch(0.985 0.008 165);--surface-2:oklch(0.955 0.014 165);--surface-3:oklch(0.93 0.016 165);
+  --border:oklch(0.88 0.015 165);--kicker:oklch(0.91 0.020 165)}
+body{width:1280px;height:720px;overflow:hidden;background:var(--surface);
+  font-family:'Space Grotesk',sans-serif;color:var(--ink);position:relative}
+.hc{position:absolute;width:20px;height:20px;border-color:var(--accent);border-style:solid;opacity:.3}
+.tl{top:16px;left:16px;border-width:1.5px 0 0 1.5px}
+.tr{top:16px;right:16px;border-width:1.5px 1.5px 0 0}
+.slide{padding:46px 64px 38px;height:720px;display:flex;flex-direction:column;gap:14px}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:8px}
+.eyebrow .idx{background:var(--accent);color:#fff;border-radius:4px;padding:1px 7px;font-size:10px}
+h2{font-size:1.75rem;font-weight:700;line-height:1.2;
+  background:linear-gradient(120deg,var(--ink) 55%,var(--accent) 130%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.kicker-line{height:2px;width:36px;background:var(--accent-bright);border-radius:2px}
+.lead{font-size:.88rem;color:var(--ink-soft);max-width:720px;line-height:1.6}
+.body{display:grid;grid-template-columns:1fr 280px;gap:24px;flex:1;align-items:start;margin-top:4px}
+/* Bar chart */
+.chart{display:flex;flex-direction:column;gap:18px;padding-top:8px}
+.bar-row{display:flex;align-items:center;gap:12px}
+.bar-lbl{font-size:.82rem;color:var(--ink-soft);width:200px;flex-shrink:0;text-align:right;line-height:1.3}
+.bar-track{flex:1;height:32px;background:var(--surface-3);border-radius:7px;overflow:hidden;position:relative}
+.bar-fill{height:100%;border-radius:7px;position:relative;
+  background:linear-gradient(90deg,var(--surface-3),var(--surface-3))}
+.bar-fill.hi{background:linear-gradient(90deg,var(--accent),var(--accent-bright));
+  box-shadow:0 0 12px oklch(0.70 0.17 165 /.35)}
+.bar-val{font-size:.88rem;font-weight:700;color:var(--ink-soft);width:58px;flex-shrink:0;font-variant-numeric:tabular-nums}
+.bar-val.hi{color:var(--accent)}
+/* Stat cards */
+.stats{display:flex;flex-direction:column;gap:10px}
+.stat{background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:12px 14px}
+.stat-val{font-size:1.5rem;font-weight:700;color:var(--accent);line-height:1.1}
+.stat-lbl{font-size:.75rem;color:var(--ink-soft);line-height:1.4;margin-top:3px}
+.stat-src{font-size:.68rem;color:var(--ink-muted);margin-top:2px}
+/* Chart anno */
+.anno{position:absolute;right:8px;top:50%;transform:translateY(-50%);
+  font-size:.7rem;font-weight:600;color:#fff;white-space:nowrap;opacity:.85}
+.src-note{font-size:.72rem;color:var(--ink-muted);line-height:1.4;margin-top:auto}
+.src-note b{color:var(--ink-soft)}
+.progress{position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--border)}
+.progress span{display:block;width:30%;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-bright));border-radius:2px}
+</style></head><body>
+<span class="hc tl"></span><span class="hc tr"></span>
+<div class="slide">
+  <p class="eyebrow"><span class="idx">02</span>Velocidad de adopción</p>
+  <h2>La IA se adoptó más rápido que cualquier tecnología de la historia</h2>
+  <div class="kicker-line"></div>
+  <p class="lead">La IA generativa se adoptó a una velocidad inédita. Esto obliga a los profesionales a aprender criterio antes de que el mercado lo exija por defecto.</p>
+  <div class="body">
+    <div class="chart">
+      <p style="font-size:.78rem;color:var(--ink-muted);margin-bottom:4px">Años en alcanzar al 40% de la población</p>
+      <div class="bar-row">
+        <span class="bar-lbl">Computadora personal</span>
+        <div class="bar-track"><div class="bar-fill" style="width:92.3%"><span class="anno">12 años</span></div></div>
+        <span class="bar-val">12 años</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-lbl">Internet</span>
+        <div class="bar-track"><div class="bar-fill" style="width:30.8%"><span class="anno" style="color:var(--ink-soft)">4</span></div></div>
+        <span class="bar-val">4 años</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-lbl">Smartphone</span>
+        <div class="bar-track"><div class="bar-fill" style="width:26.9%"><span class="anno" style="color:var(--ink-soft)">3.5</span></div></div>
+        <span class="bar-val">3.5 años</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-lbl" style="color:var(--accent);font-weight:600">IA generativa</span>
+        <div class="bar-track"><div class="bar-fill hi" style="width:15.4%"><span class="anno">2 años</span></div></div>
+        <span class="bar-val hi">2 años</span>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-val">1000 M</div>
+        <div class="stat-lbl">usuarios mensuales de ChatGPT (may 2026)</div>
+        <div class="stat-src">Reuters · Sensor Tower</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val">900 M</div>
+        <div class="stat-lbl">usuarios semanales: el doble que un año antes</div>
+        <div class="stat-src">OpenAI 2026</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val">5 días</div>
+        <div class="stat-lbl">tardó en llegar al primer millón de usuarios</div>
+        <div class="stat-src">Stanford 2026</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val">52%</div>
+        <div class="stat-lbl">de quienes la usan hoy son mujeres</div>
+        <div class="stat-src">Stanford HAI 2026</div>
+      </div>
+    </div>
+  </div>
+  <p class="src-note"><b>Fuente:</b> Bick, Blandin & Deming — NBER WP 32966 · Stanford HAI AI Index 2026.</p>
+</div>
+<div class="progress"><span></span></div>
+</body></html>
